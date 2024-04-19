@@ -1,0 +1,53 @@
+---
+# this was stolen from https://github.com/jmunixusers/presentations
+name: Build PDF Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Build:
+    if: github.repository == 'TabulateJarl8/presentations'
+    name: Build PDF release bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Ubuntu dependencies
+        run: |
+          sudo snap install chromium
+          sudo apt-get -q update
+          sudo apt-get -qq -y install pandoc texlive-xetex librsvg2-bin
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-node-"
+          restore-keys: |
+            "${{ runner.os }}-node-"
+      - name: Install marp
+        run: |
+          npm install --save-dev @marp-team/marp-cli
+      - name: Build PDFs
+        run: |
+          for input in *.md */*.md; do
+            output="${input%.md}.pdf"
+            echo "Input: $input, output $output"
+            if [[ "$(grep -l 'marp: true' "$input")" ]]; then
+              npx marp --allow-local-files "$input" -o "$output"
+            else
+              directory=$(dirname "$input")
+              pandoc --pdf-engine=xelatex -f markdown-implicit_figures --resource-path .:"$directory" -o "$output" "$input"
+            fi
+            zip -g PDF.zip "$output"
+          done
+      - name: Create updated release
+        run: |
+          gh release delete presentation-latest -y || true
+          git push --delete origin presentation-latest || true
+          gh release create presentation-latest PDF.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
