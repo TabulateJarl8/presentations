@@ -43,10 +43,6 @@ $ py -m pip install textual
 $ python -m textual
 ```
 
-OR
-
-<https://github.com/TabulateJarl8/vapor>
-
 ---
 
 ## TUTORIAL
@@ -58,4 +54,5 @@ OR
  - Screenshots
  - Unit testing
  - No-async async
- - Widget set
+ - Widget set (<https://textual.textualize.io/widget_gallery/>)
+ - Inline Mode
