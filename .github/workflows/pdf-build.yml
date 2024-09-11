@@ -33,7 +33,8 @@ jobs:
           npm install --save-dev @marp-team/marp-cli
       - name: Build PDFs
         run: |
-          for input in *.md */*.md; do
+          shopt -s globstar
+          for input in **/*.md; do
             output="${input%.md}.pdf"
             echo "Input: $input, output $output"
             if [[ "$(grep -l 'marp: true' "$input")" ]]; then
