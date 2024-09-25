@@ -23,31 +23,132 @@ KDE - <https://fedoraproject.org/spins/kde/>
 
 # Initial Setup (Fedora)
 
-<https://raw.githubusercontent.com/jacksondarman/fedora-fresh-install/>
+Excerpts from:
+<https://github.com/jacksondarman/fedora-fresh-install/>
 
-```bash
+A much quicker way than doing this all manually:
+
+```properties
 sudo bash start.sh
 ```
 
 ---
 
-# Script explaination: improving DNF
+# Improving DNF
 
 ```bash
-LINE="fastestmirror=True
-max_parallel_downloads=10
-defaultyes=True"
+sudoedit /etc/dnf/dnf.conf
+```
 
-FILE="/etc/dnf/dnf.conf"
-echo -e "$LINE" >> "$FILE"
+```py
+fastestmirror=True
+max_parallel_downloads=10
+defaultyes=True
 ```
 
 ---
 
-# Script explaination: installing RPM fusion
+# Installing RPM Fusion
 
 ```properties
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf groupupdate core
 ```
+
+---
+
+# Installing Flathub
+
+```properties
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+---
+
+# Setting your hostname
+
+```properties
+sudo hostnamectl set-hostname supercoolhostname
+```
+
+---
+
+# Install Extra Media Codecs
+
+```bash
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
+```
+
+---
+
+# Updating your system
+
+```properties
+sudo dnf upgrade
+flatpak update
+reboot
+```
+
+---
+
+# Interesting Settings
+
+- Colors & Themes
+- Display & Monitor
+- Accessibility > Shake Cursor > Disable
+- Power Management
+- Software Update
+- Users
+
+---
+
+# Flatpaks vs System Packages
+
+- Flatpaks
+  - Containerization
+  - Sandboxing
+  - Easy of Installation
+- System Packages
+  - Much smaller package sizes
+  - Better system integration
+  - May or may not encounter fewer issues
+
+---
+
+# Managing Software
+
+1. Open "Discover" from the application menu.
+2. Open "Settings" and look through the list of software.
+3. If playing games on this system, search "Steam" and click the download button.
+4. View installed software in the "Installed" tab.
+
+---
+
+# Setting up Steam to play Windows games
+
+1. Launch Steam and sign in
+2. In the upper left corner, press the "Steam" button and click "Settings"
+3. Now, click "Compatibility"
+4. Enable "Enable Steam Play for all other titles"
+
+---
+
+# Checking Steam Games Compatibility
+
+<https://protondb.com>
+
+---
+
+# KDE Connect/GSConnect
+
+- Send files
+- Share clipboards
+- Notification Sync
+- Run commands
+- Remote input
+- Presentation remote
+- Multimedia control
+- Wireless filesystem browsing
