@@ -140,15 +140,36 @@ reboot
 
 <https://protondb.com>
 
+Steam game options:
+
+- Right click > Properties
+  - General: Command Line Options
+  - Compatibility: Force the use of a specific Steam Play compatibility tool
+
+<https://github.com/TabulateJarl8/vapor>
+
 ---
 
-# KDE Connect/GSConnect
+# Some Software Alternatives
 
-- Send files
-- Share clipboards
-- Notification Sync
-- Run commands
-- Remote input
-- Presentation remote
-- Multimedia control
-- Wireless filesystem browsing
+- Microsoft Office -> LibreOffice, OnlyOffice, Office Online
+- Epic Games Launcher -> Heroic Games Launcher
+- Photoshop -> GIMP/Krita
+  - Bonus: <https://github.com/Diolinux/PhotoGIMP>
+- Illustrator -> Inkscape
+- Premiere Pro -> Kdenlive, DaVinci Resolve
+- Adobe Acrobat -> Okular
+- Outlook -> Thunderbird
+
+---
+
+# Useful Software
+
+- Media Playback: VLC
+- Video Recording/Streaming: OBS
+- Audio Recording: Audacity
+- fastfetch
+
+---
+
+# Questions?
