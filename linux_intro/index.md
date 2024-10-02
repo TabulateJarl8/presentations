@@ -4,7 +4,9 @@ theme: default
 class: invert
 ---
 
-# Linux Setup for Beginners
+# Navigating Linux
+
+## Software, gaming, configuration, and more
 
 Connor Sample - <https://tabulate.tech>
 
@@ -94,7 +96,7 @@ reboot
 
 ---
 
-# Interesting Settings
+# Interesting Settings (KDE)
 
 - Colors & Themes
 - Display & Monitor
@@ -152,23 +154,69 @@ Steam game options:
 
 # Some Software Alternatives
 
-- Microsoft Office -> LibreOffice, OnlyOffice, Office Online
-- Epic Games Launcher -> Heroic Games Launcher
-- Photoshop -> GIMP/Krita
-  - Bonus: <https://github.com/Diolinux/PhotoGIMP>
-- Illustrator -> Inkscape
-- Premiere Pro -> Kdenlive, DaVinci Resolve
-- Adobe Acrobat -> Okular
-- Outlook -> Thunderbird
+**These are also available on Windows!**
 
 ---
+
+# Microsoft Office
+
+- LibreOffice
+- OnlyOffice (Non-OSS, shown to the right)
+- Office Online
+
+![bg right contain](./img/onlyoffice.png)
+
+---
+
+# Premiere Pro
+
+- Kdenlive
+- DaVinci Resolve
+
+![bg right vertical contain](./img/kdenlive.png)
+![bg right contain](./img/davinci.png)
+
+---
+
+# Photoshop
+
+- GIMP
+- Krita
+
+Bonus: <https://github.com/Diolinux/PhotoGIMP>
+
+![bg right contain](./img/krita.png)
+
+---
+
+# Outlook
+
+- Thunderbird
+
+![bg right contain](./img/thunderbird.png)
+
+---
+
+<!-- footer: "*  Available on Linux" -->
+
+| Windows Software               | Alternative               |
+| ------------------------------ | ------------------------- |
+| Premiere Pro                   | Kdenlive, DaVinci Resolve |
+| Epic Games Launcher/GOG/Amazon | Heroic Games Launcher     |
+| Illustrator                    | Inkscape                  |
+| Adobe Acrobat                  | Okular                    |
+| Official Minecraft Launcher\*  | Prism Launcher            |
+
+---
+
+<!-- footer: "" -->
 
 # Useful Software
 
 - Media Playback: VLC
 - Video Recording/Streaming: OBS
 - Audio Recording: Audacity
-- fastfetch
+- Most essential package: fastfetch
 
 ---
 
