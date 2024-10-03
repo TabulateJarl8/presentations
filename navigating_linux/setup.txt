@@ -1,0 +1,17 @@
+1. Set up fedora VM fully installed
+2. Install steam
+On local machine, install:
+- libreoffice
+- heroic
+- gimp
+- inkscape
+- kdenlive
+- okular
+- vlc
+- obs
+- audacity
+- fastfetch
+
+open:
+- ms office sheets/word
+
