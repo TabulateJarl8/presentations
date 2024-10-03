@@ -171,7 +171,7 @@ Steam game options:
 # Premiere Pro
 
 - Kdenlive
-- DaVinci Resolve
+- DaVinci Resolve (Non-OSS)
 
 ![bg right vertical contain](./img/kdenlive.png)
 ![bg right contain](./img/davinci.png)
@@ -199,13 +199,12 @@ Bonus: <https://github.com/Diolinux/PhotoGIMP>
 
 <!-- footer: "*  Available on Linux" -->
 
-| Windows Software               | Alternative               |
-| ------------------------------ | ------------------------- |
-| Premiere Pro                   | Kdenlive, DaVinci Resolve |
-| Epic Games Launcher/GOG/Amazon | Heroic Games Launcher     |
-| Illustrator                    | Inkscape                  |
-| Adobe Acrobat                  | Okular                    |
-| Official Minecraft Launcher\*  | Prism Launcher            |
+| Windows Software               | Alternative           |
+| ------------------------------ | --------------------- |
+| Epic Games Launcher/GOG/Amazon | Heroic Games Launcher |
+| Illustrator                    | Inkscape              |
+| Adobe Acrobat                  | Okular                |
+| Official Minecraft Launcher\*  | Prism Launcher        |
 
 ---
 
