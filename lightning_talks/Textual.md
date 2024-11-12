@@ -36,7 +36,7 @@ pip3 install textual
 Windows if the above doesn't work:
 
 ```console
-py -m pip install textual 
+py -m pip install textual
 ```
 
 ---
@@ -44,10 +44,6 @@ py -m pip install textual
 ```console
 python -m textual
 ```
-
----
-
-## TUTORIAL
 
 ---
 
