@@ -49,13 +49,32 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 
 ---
 
-<!-- TODO: list services -->
+## Immich
+
+<https://demo.immich.app>
+
+---
+
+## Wakapi
+
+---
+
+## Home Assistant
+
+---
+
+## Streaming
+
+- Jellyfin
+- Plex
+- \*arr suite
 
 ---
 
 ## How to get started
 
 - Define your goals (what and why do you want to host?)
+  - <https://github.com/awesome-selfhosted/awesome-selfhosted>
 - Start with the hardware you have (or buy some very cheap, used hardware)
 - Learn as you go (break things and learn to fix them)
 - Come to next week's UUG talk on setting up your first homelab
