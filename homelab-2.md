@@ -38,8 +38,10 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 - Linux: You know
 
 ```bash
-ssh <eid>@stu.cs.jmu.edu
+ssh user@xxx.xxx.xxx.xxx
 ```
+
+<!--Password: `UUGdukes-demo`-->
 
 <!--TODO: individual user logins-->
 
