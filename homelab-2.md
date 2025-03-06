@@ -92,7 +92,7 @@ curl -fsSL https://get.casaos.io | sudo bash
 
 ## NextCloud Trusted Domains Fix
 
-```
+```bash
 /DATA/AppData/big-bear-nextcloud/html/config/config.php
 ```
 
