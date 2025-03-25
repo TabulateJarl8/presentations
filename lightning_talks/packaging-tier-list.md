@@ -238,6 +238,7 @@ dpkg-buildpackage -b -d -us -uc $(DEBUILD_OPTIONS)
 - Sometimes finicky
 - Bad documentation
 - Weird build folder structure
+- Wants dependencies to be packaged in the repos, and even they even are, they're outdated a lot of the time
 
 ---
 
