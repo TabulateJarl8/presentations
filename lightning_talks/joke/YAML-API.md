@@ -6,7 +6,7 @@ marp: true
 
 ---
 
-## Top Ten (10) Advantages of Using a YAML-based API
+## Top Nine (9) Advantages of Using a YAML-based API
 
 ---
 
@@ -161,7 +161,11 @@ api:
 
 ---
 
-## 8 -
+## 8 - YAML is Ripley's favorite configuration/programming language
+
+- He prefers it due to the simplicity brought by whitespace sensitivity
+- He uses it to configure some parts of MyMadison (COBOL can only parse YAML)
+- YAML is the official language of JMU
 
 ---
 
@@ -178,11 +182,3 @@ other: true # boolean
 ```
 
 **Your API should be as unpredictable as real life.**
-
----
-
-## 10 - YAML is Ripley's favorite configuration/programming language
-
-- He prefers it due to the simplicity brought by whitespace sensitivity
-- He uses it to configure some parts of MyMadison (COBOL can only parse YAML)
-- YAML is the official language of JMU
