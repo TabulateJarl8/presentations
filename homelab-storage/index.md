@@ -33,6 +33,14 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 
 ---
 
+## Hardware
+
+- **CMR (Conventional Magnetic Recording)**: tracks are next to each other (this is what you need to use)
+- **SMR (Shingled Magnetic Recording)**: tracks are "singled" and they overlap
+  - Higher density and cheaper, but struggle during long sustained data writes (like resilvering)
+
+---
+
 <!-- footer: "don't bully me if this is wrong i don't know much about traditional RAID" -->
 
 ## RAID
@@ -58,6 +66,21 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 
 ---
 
+## BTRFS
+
+- Evil (ripley made me include this even though it always breaks for me)
+- GPL (can be included in the kernel) vs CDDL (ZFS)
+- Similar features like COW, snapshots, checksums
+- Can add in drives after the fact
+
+---
+
+<style scoped>
+li {
+  font-size: 90%;
+}
+</style>
+
 <!-- footer: "<https://wintelguy.com/zfs-calc.pl>" -->
 
 ## Common Terminology
@@ -72,6 +95,7 @@ footer: Slides written by Connor Sample - https://tabulate.tech
   - **RAIDZ2**: Double parity (RAID 6)
 - **Dataset**: A "file system" in the pool
   - Metadata (compression, quotas) can differ from pool
+  - **ZVol**: "raw block device"
 
 ---
 
@@ -107,7 +131,11 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 - Still in pretty early development, docs don't exist
 - Only built for Rocky, Debian, and Ubuntu
 
+<center>
+
 ![width:700px](cockpit.png)
+
+</center>
 
 ---
 
@@ -126,10 +154,10 @@ footer: Slides written by Connor Sample - https://tabulate.tech
 $ sudo apt install zfsutils-linux
 $ ls -l /dev/disk/by-id/
 $ sudo zpool create \
-  -o ashift=12 \ # for modern 4KB sector drives. should be 13 for 8K sectors
-  -O compression=lz4 \ # or zstd, off, gzip
-  -O atime=off \ # performance/drive health
-  tank raidz1 \ # pool name and zfs config
+  -o ashift=12 \        # for modern 4KB sector drives. should be 13 for 8K sectors
+  -O compression=lz4 \  # or zstd, off, gzip
+  -O atime=off \        # performance/drive health
+  tank raidz1 \         # pool name and zfs config
   /dev/disk/by-id/ata-DRIVE1_______ \ # list which drives make up the pool
   /dev/disk/by-id/ata-DRIVE2_______ \
   /dev/disk/by-id/ata-DRIVE3_______
@@ -190,6 +218,29 @@ zpool replace tank ata-OLDDRIVE /dev/disk/by-id/ata-NEWDRIVE
 - 3 copies of your data
 - 2 different mediums
 - 1 offsite
+
+---
+
+## ZFS Snapshots vs Backups
+
+- Snapshots:
+  - Incredibly fast and space efficient (just copies pointers to data instead of the data itself)
+  - Good for accidental deletion of files
+  - On same drive as data
+- Backups:
+  - Live on different media
+
+---
+
+## ZFS Send/Receive
+
+- Computes the block-level differences between snapshots and sends a stream of the changes to another machine
+- Very fast (incremental)
+- Metadata is saved
+
+```properties
+zfs send tank/data@snapshot50 | ssh user@machine zfs recv tank/backup
+```
 
 ---
 
