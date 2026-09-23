@@ -200,6 +200,8 @@ footer: Connor Sample - https://tabulate.tech
 
 ---
 
+<!--footer: ""-->
+
 ## How to get started
 
 - Define your goals (what and why do you want to host?)
