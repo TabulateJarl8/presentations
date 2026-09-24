@@ -15,3 +15,4 @@ Download the full PDF bundle [here](https://github.com/TabulateJarl8/presentatio
 | [Homelabbing Demo](./homelab-2.md)                                            | JMU Unix User Group 3/5/25 Meeting           |
 | [Linux Packaging Formats Tier List](./lightning_talks/packaging-tier-list.md) | JMU Unix User Group 3/26/25 Lightning Talks  |
 | [Homelab Storage](./homelab-storage/index.md)                                 | JMU Unix User Group 2/11/26 Meeting          |
+| [Homelab 2026](./homelab-2026/index.md)                                       | JMU Unix User Group 9/23/26 Meeting          |
