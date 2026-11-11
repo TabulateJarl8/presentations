@@ -536,7 +536,7 @@ pre {
         $finish; \
     end
 
-module takeoff_warning_tb;
+module takeoff_config_tb;
     reg [3:0] BUTTONS;
     reg [1:0] SWITCHES;
     wire [5:0] LEDS;
