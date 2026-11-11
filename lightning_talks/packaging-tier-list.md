@@ -81,6 +81,8 @@ Connor Sample - <https://tabulate.tech>
 
 ### `rules`
 
+<!-- markdownlint-disable MD010 -->
+
 ```make
 #!/usr/bin/make -f
 %:
@@ -103,11 +105,13 @@ override_dh_auto_install:
 	PATH="$$PATH:$$HOME/.cargo/bin" dh_auto_install -- BINARY_PATH=target/release/squiid ELEVATE='' EXECUTABLE_PERMISSION='' NORMAL_PERMISSION=''
 ```
 
+<!-- markdownlint-enable MD010 -->
+
 ---
 
 ### `changelog`
 
-```
+```plaintext
 squiid (0.1.0-1-0ubuntu1~bionicppa1) bionic; urgency=medium
 
   * Initial release
@@ -119,7 +123,7 @@ squiid (0.1.0-1-0ubuntu1~bionicppa1) bionic; urgency=medium
 
 ### `control`
 
-```
+```plaintext
 Source: squiid
 Section: math
 Priority: optional
@@ -140,7 +144,7 @@ Description: Do advanced algebraic and RPN calculations.
 
 ### `copyright`
 
-```
+```plaintext
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: squiid
 Upstream-Contact: Connor Sample <something@nothing.com>
@@ -152,13 +156,13 @@ Files: *
 
 ### `source/format`
 
-```
+```plaintext
 3.0 (quilt)
 ```
 
 ### `docs`
 
-```
+```plaintext
 README.md
 ```
 
@@ -340,35 +344,35 @@ sha512sums=('1849aa9f609e4bfcafb5dee24962cbefe91ce3987cf8ea5014b8ca9789d16747ff4
 options=(strip !debug)
 
 prepare() {
-	cd "$pkgname-$pkgver"
-	export RUSTUP_TOOLCHAIN=stable
-	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
 }
 
 build() {
-	cd "$pkgname-$pkgver"
-	export RUSTUP_TOOLCHAIN=stable
-	export CARGO_TARGET_DIR=target
-	cargo build --frozen --release
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release
 }
 
 check() {
-	cd "$pkgname-$pkgver"
-	export RUSTUP_TOOLCHAIN=stable
-	cargo test --frozen -p squiid -p squiid-engine -p squiid-parser
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen -p squiid -p squiid-engine -p squiid-parser
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
-	install -Dm644 "branding/squiidsquare.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/squiid.svg"
-	install -Dm644 "branding/icons/squiid512.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/squiid.png"
-	install -Dm644 "branding/icons/squiid256.png" "$pkgdir/usr/share/icons/hicolor/256x256/apps/squiid.png"
-	install -Dm644 "branding/icons/squiid128.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/squiid.png"
-	install -Dm644 "branding/icons/squiid64.png" "$pkgdir/usr/share/icons/hicolor/64x64/apps/squiid.png"
-	install -Dm644 "branding/icons/squiid32.png" "$pkgdir/usr/share/icons/hicolor/32x32/apps/squiid.png"
-	install -Dm644 "branding/icons/squiid16.png" "$pkgdir/usr/share/icons/hicolor/16x16/apps/squiid.png"
-	install -Dm644 "packages/squiid.desktop" "$pkgdir/usr/share/applications/squiid.desktop"
+  cd "$pkgname-$pkgver"
+  install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "branding/squiidsquare.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/squiid.svg"
+  install -Dm644 "branding/icons/squiid512.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/squiid.png"
+  install -Dm644 "branding/icons/squiid256.png" "$pkgdir/usr/share/icons/hicolor/256x256/apps/squiid.png"
+  install -Dm644 "branding/icons/squiid128.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/squiid.png"
+  install -Dm644 "branding/icons/squiid64.png" "$pkgdir/usr/share/icons/hicolor/64x64/apps/squiid.png"
+  install -Dm644 "branding/icons/squiid32.png" "$pkgdir/usr/share/icons/hicolor/32x32/apps/squiid.png"
+  install -Dm644 "branding/icons/squiid16.png" "$pkgdir/usr/share/icons/hicolor/16x16/apps/squiid.png"
+  install -Dm644 "packages/squiid.desktop" "$pkgdir/usr/share/applications/squiid.desktop"
 }
 ```
 
@@ -435,22 +439,22 @@ distfiles="https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid/-/archi
 checksum="1849aa9f609e4bfcafb5dee24962cbefe91ce3987cf8ea5014b8ca9789d16747ff44d7428f61693102808227bfdb12dc840fee44917d5fdde26f6b2c7e65a96b"
 
 do_check() {
-	export RUSTUP_TOOLCHAIN=stable
-	cargo test --frozen -p squiid -p squiid-engine -p squiid-parser
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen -p squiid -p squiid-engine -p squiid-parser
 }
 
 do_install() {
-	vbin target/$RUST_TARGET/release/$pkgname
+  vbin target/$RUST_TARGET/release/$pkgname
 
-	vinstall branding/squiidsquare.svg 644 usr/share/icons/hicolor/scalable/apps squiid.svg
-	vinstall branding/icons/squiid512.png 644 usr/share/icons/hicolor/512x512/apps squiid.png
-	vinstall branding/icons/squiid256.png 644 usr/share/icons/hicolor/256x256/apps squiid.png
-	vinstall branding/icons/squiid128.png 644 usr/share/icons/hicolor/128x128/apps squiid.png
-	vinstall branding/icons/squiid64.png 644 usr/share/icons/hicolor/64x64/apps squiid.png
-	vinstall branding/icons/squiid32.png 644 usr/share/icons/hicolor/32x32/apps squiid.png
-	vinstall branding/icons/squiid16.png 644 usr/share/icons/hicolor/16x16/apps squiid.png
+  vinstall branding/squiidsquare.svg 644 usr/share/icons/hicolor/scalable/apps squiid.svg
+  vinstall branding/icons/squiid512.png 644 usr/share/icons/hicolor/512x512/apps squiid.png
+  vinstall branding/icons/squiid256.png 644 usr/share/icons/hicolor/256x256/apps squiid.png
+  vinstall branding/icons/squiid128.png 644 usr/share/icons/hicolor/128x128/apps squiid.png
+  vinstall branding/icons/squiid64.png 644 usr/share/icons/hicolor/64x64/apps squiid.png
+  vinstall branding/icons/squiid32.png 644 usr/share/icons/hicolor/32x32/apps squiid.png
+  vinstall branding/icons/squiid16.png 644 usr/share/icons/hicolor/16x16/apps squiid.png
 
-	vinstall packages/squiid.desktop 644 usr/share/applications
+  vinstall packages/squiid.desktop 644 usr/share/applications
 }
 ```
 
@@ -593,7 +597,7 @@ fi
 
 ---
 
-```
+```plaintext
 squiid.AppDir/
 ├── AppRun
 ├── kitty.app.png

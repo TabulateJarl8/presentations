@@ -308,11 +308,11 @@ endmodule
 
 <style scoped>
 pre {
-    font-size: 14pt;
+    font-size: 13pt;
 }
 </style>
 
-### Top Module - Writing to the FPGA
+## Top Module - Writing to the FPGA
 
 <!-- TODO: test this -->
 
@@ -527,7 +527,7 @@ pre {
 }
 </style>
 
-##### Example Testbench
+### Example Testbench
 
 ```verilog
 `define assert(signal, value) \

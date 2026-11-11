@@ -168,12 +168,16 @@ $ zpool status
 
 ## Creating a Dataset
 
+<!-- markdownlint-disable MD014 -->
+
 ```sh
 $ sudo zfs create tank/backups
 $ # optionally, change metadata:
 $ sudo zfs set compression=zstd tank/backups
 $ zfs list
 ```
+
+<!-- markdownlint-enable MD014 -->
 
 ---
 
@@ -367,8 +371,8 @@ borg compact
 
 <div class="right-col">
 
-![](vorta.png)
-![](pika.png)
+![vorta screenshot](vorta.png)
+![pika screenshot](pika.png)
 
 </div>
 

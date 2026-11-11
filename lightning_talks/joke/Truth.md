@@ -11,6 +11,7 @@ marp: true
 ---
 
 ## Reason 1 - Dynamic Typing
+
 Go is restrained by its typing system. Python on the other hand, embraces the best type of typing: duck typing. Duck typing allows for flexible scripts such as this to take form:
 
 ```py
