@@ -452,12 +452,12 @@ th, td {
 | `BUTTONS[2]` | Doors Closed           |
 | `BUTTONS[3]` | Trim Set               |
 
-| Switches State | Throttle         | Behavior                                              |
-| -------------- | ---------------- | ----------------------------------------------------- |
-| `00`           | Idle             | No checks                                             |
-| `01`           | Taxi             | Checks run, but warning light does not show           |
-| `10`           | Takeoff          | Checks run and the warning fires if anything is wrong |
-| `11`           | Takeoff override | Warning is silenced; ready light shows no matter what |
+| Switches State | Throttle         | Behavior                                                                |
+| -------------- | ---------------- | ----------------------------------------------------------------------- |
+| `00`           | Idle             | No checks                                                               |
+| `01`           | Taxi             | Checks run, but warning light does not show                             |
+| `10`           | Takeoff          | Checks run and the warning fires if anything is wrong                   |
+| `11`           | Takeoff override | Warning is silenced - no fault lights; ready light shows no matter what |
 
 ---
 
