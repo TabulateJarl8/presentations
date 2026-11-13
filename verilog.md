@@ -314,13 +314,11 @@ pre {
 
 ## Top Module - Writing to the FPGA
 
-<!-- TODO: test this -->
-
 ```verilog
 module top(
-  input [1:0] SWITCHES,
-  input [3:0] BUTTONS,
-  output [5:0] LEDS
+  input [0:0] SWITCHES,
+  input [2:0] BUTTONS,
+  output [0:0] LEDS
 );
   wire w_sum;
   wire w_cout;
@@ -457,7 +455,7 @@ th, td {
 | Switches State | Throttle         | Behavior                                              |
 | -------------- | ---------------- | ----------------------------------------------------- |
 | `00`           | Idle             | No checks                                             |
-| `01`           | Taxi             | Checks run, but only the "not ready" light is shown   |
+| `01`           | Taxi             | Checks run, but warning light does not show           |
 | `10`           | Takeoff          | Checks run and the warning fires if anything is wrong |
 | `11`           | Takeoff override | Warning is silenced; ready light shows no matter what |
 
