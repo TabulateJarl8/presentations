@@ -587,6 +587,26 @@ endmodule
 
 <!-- footer: "Slides written by Connor Sample - https://tabulate.tech" -->
 
+# How do FPGAs actually work?
+
+- Rely on configuration memory
+  - Populated from bitstream
+- Memory controls two main structures:
+  - Look-up tables: simulating logic gates
+  - Routing matrix: programmable switches connecting LUTs
+- Partial Reconfiguration: changing only an isolated region of the FPGA
+
+---
+
+# Self-Reconfiguration
+
+- FPGAs can reprogram themselves while running
+  - Write logic into its own configuration memory using internal port
+- Feedback loops (sensors, data, etc)
+  - Example: satellite swapping out telemetry module for a heavy error-correcting variant when entering high radiation zones; Tradeoffs
+
+---
+
 # What I didn't cover
 
 - Clocks & Sequential Logic
